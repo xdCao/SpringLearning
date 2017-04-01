@@ -16,8 +16,8 @@ import java.sql.SQLException;
 public class UserDao {
 
     private final static String MATCH_COUNT_SQL="select count(*) from t_user where user_name=? and password=?";
-    private final static String UPDATE_LOGIN_INFO_SQL="update t_user set last_visit=?,last_ip=?,credits=? where user_id=?";
-
+    private final static String UPDATE_LOGIN_INFO_SQL="update t_user set last_visit=?,last_ip=?,credit=? where user_id=?";
+    private final static String FIND_USER_SQL="select * from t_user where user_name=? and password=?";
     private JdbcTemplate jdbcTemplate;
 
     @Autowired
@@ -32,14 +32,14 @@ public class UserDao {
         return jdbcTemplate.queryForObject(MATCH_COUNT_SQL,new Object[]{username,password},Integer.class);
     }
 
-    public User findUserByUserName(final String username){
+    public User findUserByUserName(final String username,String password){
         final User user=new User();
-        jdbcTemplate.query(MATCH_COUNT_SQL, new Object[]{username}, new RowCallbackHandler() {
+        jdbcTemplate.query(FIND_USER_SQL, new Object[]{username,password}, new RowCallbackHandler() {
             @Override
             public void processRow(ResultSet rs) throws SQLException {
                 user.setUserId(rs.getInt("user_id"));
                 user.setUserName(username);
-                user.setCredits(rs.getInt("credits"));
+                user.setCredits(rs.getInt("credit"));
             }
         });
         return user;

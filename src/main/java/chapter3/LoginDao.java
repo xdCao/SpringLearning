@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class LoginDao {
 
-    private final static String INSERT_LOGIN_LOG_SQL="insert into t_login_log(user_id,ip,login_date) values(?,?,?)";
+    private final static String INSERT_LOGIN_LOG_SQL="insert into t_login_log(user_id,ip,login_datetime) values(?,?,?)";
 
 
     private JdbcTemplate jdbcTemplate;

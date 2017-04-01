@@ -8,9 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>主页</title>
 </head>
 <body>
+
+${user.userName},欢迎光临，您当前积分：${user.credits};
 
 </body>
 </html>

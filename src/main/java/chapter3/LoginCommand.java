@@ -5,21 +5,21 @@ package chapter3;
  */
 public class LoginCommand {
 
-    private String username;
+    private String userName;
     private String password;
 
-    public void setUsername(String username) {
-        this.username = username;
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public void setPassword(String password) {
         this.password = password;
     }
 
-    public String getUsername() {
-
-        return username;
-    }
 
     public String getPassword() {
         return password;

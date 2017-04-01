@@ -28,8 +28,8 @@ public class UserService {
         return matchCount>0;
     }
 
-    public User findUserByUserName(String userName){
-        return userDao.findUserByUserName(userName);
+    public User findUserByUserName(String userName,String password){
+        return userDao.findUserByUserName(userName,password);
     }
 
     @Transactional

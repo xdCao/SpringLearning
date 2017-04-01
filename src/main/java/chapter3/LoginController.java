@@ -22,17 +22,17 @@ public class LoginController {
     }
 
     @RequestMapping(value = {"/index.html","/"})
-    public String loginPage(){
-        return "login";
+    public ModelAndView loginPage(){
+        return new ModelAndView("login");
     }
 
     @RequestMapping(value = "/loginCheck.html")
     public ModelAndView loginCheck(HttpServletRequest request,LoginCommand loginCommand){
-        boolean isValidUser=userService.hasMatchUser(loginCommand.getUsername(),loginCommand.getPassword());
+        boolean isValidUser=userService.hasMatchUser(loginCommand.getUserName(),loginCommand.getPassword());
         if(!isValidUser){
             return new ModelAndView("login","error","用户名或密码错误");
         }else {
-            User user=userService.findUserByUserName(loginCommand.getUsername());
+            User user=userService.findUserByUserName(loginCommand.getUserName(),loginCommand.getPassword());
             user.setLastIp(request.getLocalAddr());
             user.setLastVisit(new Date());
             userService.loginSuccess(user);
