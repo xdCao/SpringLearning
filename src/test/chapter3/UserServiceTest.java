@@ -1,3 +1,5 @@
+package chapter3;
+
 import chapter3.Application;
 import chapter3.User;
 import chapter3.UserService;

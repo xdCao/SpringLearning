@@ -59,6 +59,8 @@
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-juli:8.5.11" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.3.6.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:4.3.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-actuator:1.5.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-actuator:1.5.1.RELEASE" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.40" />
           <element id="library" level="project" name="Maven: commons-dbcp:commons-dbcp:1.4" />
           <element id="library" level="project" name="Maven: commons-pool:commons-pool:1.6" />
