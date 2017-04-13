@@ -2,10 +2,14 @@ package chapter4;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 /**
  * Created by xdcao on 2017/4/10.
  */
+@Scope("prototype")
+@Component
 public class Car implements BeanFactoryAware,BeanNameAware,InitializingBean,DisposableBean{
 
     private String brand;

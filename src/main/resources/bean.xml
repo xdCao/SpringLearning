@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="user" class="chapter3.User"
-    p:userName="111"
-    />
+    <context:component-scan base-package="chapter4,chapter5"/>
 
-    <bean id="car" class="chapter4.Car"
-          init-method="myInit"
-          destroy-method="myDestroy"
-          p:brand="红旗"
-          p:maxSpeed="240"/>
+    <!--<bean id="user" class="chapter3.User"-->
+    <!--p:userName="111"-->
+    <!--/>-->
 
-    <bean id="myBeanFactoryPostProcessor" class="chapter4.MyBeanFactoryPostProcessor"/>
+    <!--<bean id="car" class="chapter4.Car"-->
+          <!--init-method="myInit"-->
+          <!--destroy-method="myDestroy"-->
+          <!--p:brand="红旗"-->
+          <!--p:maxSpeed="240"/>-->
+
+    <!--<bean id="myBeanFactoryPostProcessor" class="chapter4.MyBeanFactoryPostProcessor"/>-->
 
 </beans>
